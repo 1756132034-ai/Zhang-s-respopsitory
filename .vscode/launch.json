@@ -2,24 +2,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "调试",
-            "type": "cppdbg",
+            "name": "C/C++: g++.exe 生成并调试活动文件",
+            "type": "cppdbg", // 关键：改成这个，支持 GDB
             "request": "launch",
-            "program": "${workspaceFolder}/stack.exe",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "externalConsole": true,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false, // 想弹出黑窗口就设为 true
+            "internalConsoleOptions": "openOnSessionStart",
+            "preLaunchTask": "g++.exe build active file", // 这里要和 tasks.json 里的 label 一致
             "MIMode": "gdb",
-            "miDebuggerPath": "gdb.exe",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build"
+            "miDebuggerPath": "gdb.exe" // 这里填你的 gdb 路径，一般填 gdb.exe 即可
         }
     ]
 }
