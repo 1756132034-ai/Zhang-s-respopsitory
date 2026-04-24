@@ -125,6 +125,7 @@ void creatTree(Binarytree *T)
 }
 
 // ===================== 2. 递归遍历 =====================
+//前序遍历
 void preOrder(Binarytree T)
 {
     if (T)
@@ -135,6 +136,7 @@ void preOrder(Binarytree T)
     }
 }
 
+//中序遍历
 void inOrder(Binarytree T)
 {
     if (T)
@@ -145,6 +147,7 @@ void inOrder(Binarytree T)
     }
 }
 
+//后序遍历
 void postOrder(Binarytree T)
 {
     if (T)
